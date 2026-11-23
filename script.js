@@ -1,3 +1,5 @@
+const ASSET_BASE = import.meta.env.BASE_URL;
+
 const profileData = [
   {
     title: "Education",
@@ -28,7 +30,7 @@ const works = [
   {
     id: "skinfood",
     category: "UIUX",
-    image: "/assets/7dea1.png",
+    image: `${ASSET_BASE}assets/7dea1.png`,
     title: "스킨푸드 웹사이트 리뉴얼",
     type: "Web Design · UI/UX",
     link: "https://jiyeon0523.github.io/skinfood/",
@@ -37,7 +39,7 @@ const works = [
   {
     id: "havn",
     category: "BRANDING",
-    image: "/assets/6c722.png",
+    image: `${ASSET_BASE}assets/6c722.png`,
     title: "HAVN",
     type: "Trans Branding · Team Project",
     ppt: "#",
@@ -45,7 +47,7 @@ const works = [
   {
     id: "ifne",
     category: "BRANDING",
-    image: "/assets/de313.png",
+    image: `${ASSET_BASE}assets/de313.png`,
     title: "이프네 리브랜딩",
     type: "Rebranding · Team Project",
     video: "#",
@@ -54,7 +56,7 @@ const works = [
   {
     id: "environment",
     category: "BRANDING",
-    image: "/assets/5344c.png",
+    image: `${ASSET_BASE}assets/5344c.png`,
     title: "비교과 환경 교육 프로그램",
     type: "Branding · Team Project",
     video: "#",
@@ -165,15 +167,15 @@ function createWorkCards() {
     article.dataset.category = work.category;
     article.dataset.id = work.id;
     const linkIcon = work.link
-      ? `<a href="${work.link}" target="_blank" rel="noopener" aria-label="${work.title} 웹사이트 열기"><img src="/assets/5bdf6.svg" alt=""></a>`
+      ? `<a href="${work.link}" target="_blank" rel="noopener" aria-label="${work.title} 웹사이트 열기"><img src="${ASSET_BASE}assets/5bdf6.svg" alt=""></a>`
       : "";
     const videoIcon = work.video
-      ? `<span role="img" aria-label="프로젝트 영상"><img src="/assets/39b1e.svg" alt=""></span>`
+      ? `<span role="img" aria-label="프로젝트 영상"><img src="${ASSET_BASE}assets/39b1e.svg" alt=""></span>`
       : "";
     const pptIcon = work.ppt
       ? work.ppt === "#"
-        ? `<span role="img" aria-label="프로젝트 PPT"><img src="/assets/97acc.svg" alt=""></span>`
-        : `<a href="${work.ppt}" target="_blank" rel="noopener" aria-label="${work.title} PPT 열기"><img src="/assets/97acc.svg" alt=""></a>`
+        ? `<span role="img" aria-label="프로젝트 PPT"><img src="${ASSET_BASE}assets/97acc.svg" alt=""></span>`
+        : `<a href="${work.ppt}" target="_blank" rel="noopener" aria-label="${work.title} PPT 열기"><img src="${ASSET_BASE}assets/97acc.svg" alt=""></a>`
       : "";
     article.innerHTML = `
       <img src="${work.image}" alt="${work.title} 프로젝트 대표 이미지">
